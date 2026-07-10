@@ -1,0 +1,1081 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ALIGAAH DESIGNS — Handcrafted Ethnic Wear</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+<style>
+:root{
+  --ink:#211a10;
+  --ink-soft:#4d4436;
+  --muted:#8a7f6d;
+  --gold:#b8862f;
+  --gold-deep:#8c6b26;
+  --gold-soft:#e9d9b4;
+  --cream:#faf6ee;
+  --cream-2:#f4ede0;
+  --line:#eee5d4;
+  --white:#ffffff;
+  --teal:#186a70;
+  --green:#5f8c30;
+  --red:#b03a2e;
+  --shadow:0 10px 30px rgba(33,26,16,.10);
+  --shadow-lg:0 24px 60px rgba(33,26,16,.16);
+  --radius:16px;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+html,body{overflow-x:hidden}
+body{font-family:'Roboto',system-ui,sans-serif;background:var(--white);color:var(--ink);line-height:1.6;-webkit-font-smoothing:antialiased}
+img{display:block;max-width:100%}
+a{color:inherit;text-decoration:none}
+button{font-family:inherit;cursor:pointer;border:none;background:none}
+.wrap{max-width:1240px;margin:0 auto;padding:0 24px}
+
+/* ============ ANNOUNCEMENT ============ */
+.announce{background:linear-gradient(90deg,#1c1710,#3a2d15,#1c1710);color:#f0e3c2;font-size:12.5px;font-weight:500;letter-spacing:.6px;text-align:center;padding:9px 16px}
+.announce b{color:#ffd98a;font-weight:700}
+
+/* ============ HEADER ============ */
+header{position:sticky;top:0;z-index:120;background:rgba(255,255,255,.94);backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
+.nav-row{display:flex;align-items:center;gap:28px;height:74px}
+.brand{display:flex;align-items:center;gap:12px;flex-shrink:0}
+.brand-name{line-height:1.1}
+.brand-name .top{font-size:19px;font-weight:900;letter-spacing:4px;color:var(--ink)}
+.brand-name .sub{font-size:9.5px;font-weight:500;letter-spacing:5.5px;color:var(--gold-deep)}
+nav.main{display:flex;gap:26px;margin:0 auto}
+nav.main a{font-size:13px;font-weight:500;letter-spacing:1.4px;text-transform:uppercase;color:var(--ink-soft);padding:6px 0;position:relative;transition:color .2s}
+nav.main a::after{content:"";position:absolute;left:0;bottom:0;width:0;height:2px;background:var(--gold);transition:width .25s}
+nav.main a:hover{color:var(--ink)}
+nav.main a:hover::after{width:100%}
+.icon-row{display:flex;align-items:center;gap:6px;flex-shrink:0}
+.icon-btn{position:relative;width:42px;height:42px;border-radius:50%;display:grid;place-items:center;color:var(--ink-soft);transition:background .2s,color .2s}
+.icon-btn:hover{background:var(--cream-2);color:var(--ink)}
+.icon-btn svg{width:21px;height:21px;stroke:currentColor;fill:none;stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round}
+.badge{position:absolute;top:2px;right:0;min-width:17px;height:17px;padding:0 4px;border-radius:9px;background:var(--gold);color:#fff;font-size:10.5px;font-weight:700;display:grid;place-items:center;transform:scale(0);transition:transform .25s cubic-bezier(.34,1.56,.64,1)}
+.badge.on{transform:scale(1)}
+.burger{display:none}
+
+/* mobile menu */
+.mobile-menu{display:none;position:fixed;inset:0;z-index:200;background:rgba(20,15,8,.45)}
+.mobile-menu.open{display:block}
+.mobile-panel{position:absolute;top:0;right:0;width:min(320px,85vw);height:100%;background:#fff;padding:28px 26px;display:flex;flex-direction:column;gap:4px;box-shadow:var(--shadow-lg)}
+.mobile-panel a{padding:13px 4px;font-size:15px;font-weight:500;letter-spacing:1px;text-transform:uppercase;border-bottom:1px solid var(--line);color:var(--ink-soft)}
+.mobile-close{align-self:flex-end;font-size:26px;color:var(--muted);margin-bottom:10px}
+
+/* ============ SEARCH OVERLAY ============ */
+.search-bar{display:none;border-top:1px solid var(--line);background:#fff;padding:14px 0}
+.search-bar.open{display:block}
+.search-inner{display:flex;gap:12px;align-items:center}
+.search-inner input{flex:1;border:1px solid var(--line);border-radius:999px;padding:12px 22px;font-size:15px;font-family:inherit;outline:none;background:var(--cream)}
+.search-inner input:focus{border-color:var(--gold)}
+.search-close{color:var(--muted);font-size:22px;padding:0 8px}
+
+/* ============ HERO ============ */
+.hero{background:
+  radial-gradient(900px 500px at 85% 0%, #fdf3dd 0%, transparent 60%),
+  radial-gradient(700px 420px at 0% 100%, #f3ede1 0%, transparent 55%),
+  var(--cream);
+  overflow:hidden;position:relative}
+.hero-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:56px;align-items:center;padding:64px 0 76px}
+.kicker{display:inline-flex;align-items:center;gap:10px;font-size:12px;font-weight:700;letter-spacing:2.5px;text-transform:uppercase;color:var(--gold-deep);background:#fff;border:1px solid var(--gold-soft);padding:8px 16px;border-radius:999px;box-shadow:0 4px 14px rgba(184,134,47,.10)}
+.kicker::before{content:"";width:7px;height:7px;border-radius:50%;background:var(--gold)}
+.hero h1{font-size:clamp(34px,4.6vw,58px);font-weight:900;line-height:1.08;letter-spacing:-.5px;margin:20px 0 18px;color:var(--ink)}
+.hero h1 em{font-style:normal;color:var(--gold-deep);position:relative}
+.hero h1 em::after{content:"";position:absolute;left:0;right:0;bottom:4px;height:10px;background:var(--gold-soft);z-index:-1;border-radius:4px}
+.hero p.lead{font-size:16.5px;font-weight:300;color:var(--ink-soft);max-width:520px;margin-bottom:30px}
+.cta-row{display:flex;gap:14px;flex-wrap:wrap}
+.btn{display:inline-flex;align-items:center;gap:9px;padding:15px 30px;border-radius:999px;font-size:13.5px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;transition:transform .2s,box-shadow .2s,background .2s}
+.btn-gold{background:linear-gradient(135deg,#c99a3d,#a6772a);color:#fff;box-shadow:0 10px 24px rgba(166,119,42,.32)}
+.btn-gold:hover{transform:translateY(-2px);box-shadow:0 14px 30px rgba(166,119,42,.4)}
+.btn-ghost{border:1.5px solid var(--ink);color:var(--ink);background:transparent}
+.btn-ghost:hover{background:var(--ink);color:#fff}
+.hero-stats{display:flex;gap:38px;margin-top:42px;flex-wrap:wrap}
+.stat b{display:block;font-size:24px;font-weight:900;color:var(--ink)}
+.stat span{font-size:12.5px;font-weight:500;letter-spacing:1px;text-transform:uppercase;color:var(--muted)}
+
+.hero-visual{position:relative;justify-self:end;width:min(460px,100%)}
+.hero-img-main{position:relative;border-radius:26px;overflow:hidden;box-shadow:var(--shadow-lg);aspect-ratio:4/5;background:linear-gradient(160deg,#2a2013,#4a3617)}
+.hero-img-main img{width:100%;height:100%;object-fit:cover}
+.hero-frame{position:absolute;inset:-14px;border:1.5px solid var(--gold-soft);border-radius:34px;pointer-events:none}
+.hero-chip{position:absolute;left:-30px;bottom:34px;background:#fff;border-radius:16px;box-shadow:var(--shadow-lg);padding:13px 16px;display:flex;align-items:center;gap:12px;animation:float 5s ease-in-out infinite}
+.hero-chip img{width:52px;height:52px;border-radius:12px;object-fit:cover;background:var(--cream-2)}
+.hero-chip .t{font-size:13.5px;font-weight:700;line-height:1.25}
+.hero-chip .p{font-size:13px;color:var(--gold-deep);font-weight:700}
+.hero-tag{position:absolute;top:20px;right:-16px;background:var(--ink);color:#ffd98a;font-size:11.5px;font-weight:700;letter-spacing:1.6px;text-transform:uppercase;padding:10px 18px;border-radius:999px;box-shadow:var(--shadow);animation:float 6s 1s ease-in-out infinite}
+@keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-9px)}}
+
+/* ============ SECTION HEADS ============ */
+section{padding:74px 0}
+.sec-head{text-align:center;max-width:640px;margin:0 auto 44px}
+.sec-kicker{font-size:12px;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:var(--gold-deep)}
+.sec-head h2{font-size:clamp(26px,3.2vw,38px);font-weight:900;letter-spacing:-.3px;margin:10px 0 12px}
+.sec-head p{font-size:15px;font-weight:300;color:var(--muted)}
+.rule{width:70px;height:3px;border-radius:2px;background:linear-gradient(90deg,var(--gold),#e2c37b);margin:18px auto 0}
+
+/* ============ CATEGORY CIRCLES ============ */
+.cats{padding-top:64px;padding-bottom:30px}
+.cat-marquee{overflow:hidden;position:relative;
+  -webkit-mask-image:linear-gradient(90deg,transparent,#000 7%,#000 93%,transparent);
+  mask-image:linear-gradient(90deg,transparent,#000 7%,#000 93%,transparent)}
+.cat-row{display:flex;width:max-content;animation:catloop 32s linear infinite;will-change:transform}
+.cat-marquee:hover .cat-row,.cat-marquee:active .cat-row{animation-play-state:paused}
+@keyframes catloop{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+.cat-set{display:flex;gap:44px;padding-right:44px;flex-shrink:0}
+@media (prefers-reduced-motion:reduce){
+  .cat-row{animation:none;width:auto;overflow-x:auto}
+  .cat-marquee{-webkit-mask-image:none;mask-image:none;overflow-x:auto}
+}
+.cat{display:flex;flex-direction:column;align-items:center;gap:13px;width:118px;flex-shrink:0}
+.cat-img{width:112px;height:112px;border-radius:50%;padding:4px;background:#fff;border:1.5px solid var(--line);transition:border-color .25s,transform .25s,box-shadow .25s;position:relative}
+.cat-img img{width:100%;height:100%;border-radius:50%;object-fit:cover;background:var(--cream-2)}
+.cat:hover .cat-img{border-color:var(--gold);transform:translateY(-5px);box-shadow:0 14px 28px rgba(184,134,47,.22)}
+.cat b{font-size:13.5px;font-weight:700;letter-spacing:.4px;text-align:center}
+.cat span{font-size:11.5px;color:var(--muted);margin-top:-9px}
+
+/* ============ PRODUCT GRID ============ */
+.grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+.card{background:#fff;border-radius:var(--radius);overflow:hidden;border:1px solid var(--line);transition:transform .3s,box-shadow .3s;display:flex;flex-direction:column}
+.card:hover{transform:translateY(-6px);box-shadow:var(--shadow-lg)}
+.card-media{position:relative;aspect-ratio:3/4;overflow:hidden;background:linear-gradient(160deg,var(--cream-2),#e8dcc4)}
+.card-media img{width:100%;height:100%;object-fit:cover;transition:transform .6s}
+.card:hover .card-media img{transform:scale(1.06)}
+.flag{position:absolute;top:12px;left:12px;font-size:10.5px;font-weight:700;letter-spacing:1.4px;text-transform:uppercase;padding:6px 13px;border-radius:999px;color:#fff;z-index:2}
+.flag.new{background:var(--gold)}
+.flag.best{background:var(--teal)}
+.heart{position:absolute;top:10px;right:10px;width:38px;height:38px;border-radius:50%;background:rgba(255,255,255,.92);display:grid;place-items:center;color:var(--ink-soft);z-index:2;transition:transform .2s,color .2s;box-shadow:0 3px 10px rgba(0,0,0,.12)}
+.heart:hover{transform:scale(1.1)}
+.heart svg{width:18px;height:18px;fill:none;stroke:currentColor;stroke-width:1.9;stroke-linecap:round;stroke-linejoin:round}
+.heart.active{color:var(--red)}
+.heart.active svg{fill:var(--red);stroke:var(--red)}
+.add-btn{margin-top:12px;width:100%;padding:12px 10px;border-radius:11px;background:var(--ink);color:#fff;font-size:12px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;transition:background .2s,transform .15s}
+.add-btn:hover{background:var(--gold)}
+.add-btn:active{transform:scale(.97)}
+.card-body{padding:16px 18px 20px;display:flex;flex-direction:column;gap:5px;flex:1}
+.card-cat{font-size:10.5px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--gold-deep)}
+.card-name{font-size:15.5px;font-weight:700;letter-spacing:.1px}
+.card-fab{font-size:12.5px;font-weight:300;color:var(--muted)}
+.card-price{margin-top:auto;padding-top:8px;display:flex;align-items:baseline;gap:9px}
+.card-price s{font-size:12.5px;color:var(--muted);font-weight:300}
+.card-price b{font-size:17px;font-weight:900}
+.card-price .off{font-size:11.5px;font-weight:700;color:var(--green)}
+.stars{font-size:12px;color:var(--gold);letter-spacing:2px}
+.stars i{font-style:normal;color:#ddd3bf}
+
+.alt{background:var(--cream)}
+
+/* ============ WHATSAPP BANNER ============ */
+.wa-banner{background:linear-gradient(100deg,#1c1710 0%,#33270f 55%,#1c1710 100%);color:#f4e8cd;border-radius:24px;padding:44px 48px;display:flex;align-items:center;justify-content:space-between;gap:30px;flex-wrap:wrap;position:relative;overflow:hidden}
+.wa-banner::before{content:"";position:absolute;right:-60px;top:-60px;width:260px;height:260px;border-radius:50%;border:1.5px solid rgba(212,175,90,.25)}
+.wa-banner::after{content:"";position:absolute;right:20px;bottom:-90px;width:200px;height:200px;border-radius:50%;border:1.5px solid rgba(212,175,90,.18)}
+.wa-banner h3{font-size:clamp(21px,2.6vw,29px);font-weight:900;letter-spacing:-.2px;color:#fff;margin-bottom:8px}
+.wa-banner p{font-size:14.5px;font-weight:300;color:#cbb98c;max-width:520px}
+.btn-wa{background:#25d366;color:#062b12;box-shadow:0 10px 26px rgba(37,211,102,.32)}
+.btn-wa:hover{transform:translateY(-2px)}
+
+/* ============ PROMISES ============ */
+.promises{display:grid;grid-template-columns:repeat(4,1fr);gap:22px}
+.promise{background:#fff;border:1px solid var(--line);border-radius:var(--radius);padding:26px 24px;display:flex;flex-direction:column;gap:11px;transition:transform .25s,box-shadow .25s}
+.promise:hover{transform:translateY(-4px);box-shadow:var(--shadow)}
+.promise .ic{width:48px;height:48px;border-radius:14px;background:linear-gradient(135deg,#f6ead0,#efdcae);display:grid;place-items:center;color:var(--gold-deep)}
+.promise .ic svg{width:23px;height:23px;stroke:currentColor;fill:none;stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round}
+.promise b{font-size:15px;font-weight:700}
+.promise span{font-size:13px;font-weight:300;color:var(--muted);line-height:1.55}
+
+/* ============ TESTIMONIALS ============ */
+.tests{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+.test{background:#fff;border:1px solid var(--line);border-radius:var(--radius);padding:28px;display:flex;flex-direction:column;gap:14px}
+.test .stars{font-size:14px}
+.test p{font-size:14.5px;font-weight:300;color:var(--ink-soft);font-style:italic;line-height:1.7}
+.test .who{display:flex;align-items:center;gap:12px;margin-top:auto}
+.test .avatar{width:42px;height:42px;border-radius:50%;background:linear-gradient(135deg,var(--gold),#e2c37b);color:#fff;font-weight:900;display:grid;place-items:center;font-size:15px}
+.test .who b{font-size:13.5px;display:block}
+.test .who span{font-size:12px;color:var(--muted)}
+
+/* ============ STORY ============ */
+.story-grid{display:grid;grid-template-columns:380px 1fr;gap:60px;align-items:center}
+.story-img{border-radius:24px;overflow:hidden;box-shadow:var(--shadow-lg);aspect-ratio:4/5;background:var(--cream-2);position:relative}
+.story-img img{width:100%;height:100%;object-fit:cover}
+.story h2{font-size:clamp(24px,3vw,34px);font-weight:900;line-height:1.2;margin-bottom:18px}
+.story p{font-size:15.5px;font-weight:300;color:var(--ink-soft);max-width:600px;margin-bottom:14px}
+.story .sig{font-size:15px;font-style:italic;color:var(--gold-deep);font-weight:500;margin-top:10px}
+
+/* ============ FOOTER ============ */
+footer{background:#171209;color:#cbbfa8;margin-top:30px}
+.foot-grid{display:grid;grid-template-columns:1.3fr 1fr 1fr 1.2fr;gap:44px;padding:64px 0 48px}
+.foot-brand p{font-size:13.5px;font-weight:300;line-height:1.7;margin:16px 0 20px;color:#9d9078}
+.socials{display:flex;gap:10px}
+.soc{width:40px;height:40px;border-radius:50%;border:1px solid #3d3322;display:grid;place-items:center;color:#d6c294;transition:background .2s,border-color .2s}
+.soc:hover{background:#2a2213;border-color:var(--gold)}
+.soc svg{width:17px;height:17px;fill:currentColor}
+footer h4{color:#f0e3c2;font-size:12.5px;font-weight:700;letter-spacing:2.5px;text-transform:uppercase;margin-bottom:18px}
+.foot-links{display:flex;flex-direction:column;gap:11px}
+.foot-links a{font-size:13.5px;font-weight:300;color:#a89a7f;transition:color .2s}
+.foot-links a:hover{color:#ffd98a}
+.foot-contact p{font-size:13.5px;font-weight:300;color:#a89a7f;margin-bottom:10px}
+.foot-bottom{border-top:1px solid #2a2213;padding:20px 0;display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;font-size:12.5px;color:#8a7c62}
+
+/* ============ CART DRAWER ============ */
+.cart-overlay{position:fixed;inset:0;background:rgba(20,15,8,.5);z-index:300;opacity:0;pointer-events:none;transition:opacity .3s}
+.cart-overlay.open{opacity:1;pointer-events:auto}
+.cart-drawer{position:fixed;top:0;right:0;height:100%;height:100dvh;width:min(420px,94vw);background:#fff;z-index:310;display:flex;flex-direction:column;transform:translateX(105%);transition:transform .38s cubic-bezier(.22,1,.36,1);box-shadow:-20px 0 50px rgba(0,0,0,.18)}
+.cart-drawer.open{transform:translateX(0)}
+.cart-head{display:flex;align-items:center;justify-content:space-between;padding:20px 24px;border-bottom:1px solid var(--line)}
+.cart-head b{font-size:16px;font-weight:900;letter-spacing:.5px}
+.cart-head span{color:var(--muted);font-size:13px;font-weight:400}
+.cart-close{font-size:24px;color:var(--muted);padding:4px 8px}
+.ship-bar{padding:16px 24px;border-bottom:1px solid var(--line);background:var(--cream)}
+.ship-bar .msg{font-size:12.5px;font-weight:500;margin-bottom:9px}
+.ship-bar .msg b{color:var(--gold-deep)}
+.ship-track{height:7px;border-radius:4px;background:#e9dfc9;overflow:hidden}
+.ship-fill{height:100%;width:0%;border-radius:4px;background:linear-gradient(90deg,var(--gold),#e2c37b);transition:width .4s}
+.cart-items{flex:1;overflow-y:auto;-webkit-overflow-scrolling:touch;padding:10px 24px}
+.cart-empty{text-align:center;padding:60px 20px;color:var(--muted)}
+.cart-empty svg{width:54px;height:54px;stroke:#d8ccb2;fill:none;stroke-width:1.4;margin:0 auto 16px}
+.cart-empty b{display:block;color:var(--ink-soft);font-size:15px;margin-bottom:6px}
+.cart-empty span{font-size:13px;font-weight:300}
+.ci{display:flex;gap:14px;padding:16px 0;border-bottom:1px solid var(--line)}
+.ci img{width:70px;height:88px;border-radius:10px;object-fit:cover;background:var(--cream-2)}
+.ci-info{flex:1;display:flex;flex-direction:column;gap:3px}
+.ci-info .n{font-size:14px;font-weight:700;line-height:1.3}
+.ci-info .c{font-size:11px;font-weight:500;letter-spacing:1.2px;text-transform:uppercase;color:var(--gold-deep)}
+.ci-info .p{font-size:14px;font-weight:900;margin-top:2px}
+.ci-row{display:flex;align-items:center;justify-content:space-between;margin-top:8px}
+.qty{display:inline-flex;align-items:center;border:1px solid var(--line);border-radius:999px}
+.qty button{width:30px;height:30px;font-size:15px;color:var(--ink-soft);display:grid;place-items:center}
+.qty button:hover{color:var(--gold-deep)}
+.qty b{min-width:26px;text-align:center;font-size:13.5px}
+.ci-remove{font-size:12px;color:var(--muted);text-decoration:underline}
+.ci-remove:hover{color:var(--red)}
+.cart-foot{border-top:1px solid var(--line);padding:20px 24px 24px;background:#fff}
+.cart-sub{display:flex;justify-content:space-between;align-items:baseline;margin-bottom:6px}
+.cart-sub span{font-size:14px;color:var(--ink-soft)}
+.cart-sub b{font-size:21px;font-weight:900}
+.cart-note{font-size:12px;font-weight:300;color:var(--muted);margin-bottom:16px}
+.btn-checkout{width:100%;justify-content:center;padding:16px}
+.btn-keep{width:100%;justify-content:center;margin-top:10px;padding:13px;font-size:12.5px;border:1.5px solid var(--line);border-radius:999px;color:var(--ink-soft);font-weight:700;letter-spacing:1.5px;text-transform:uppercase}
+.btn-keep:hover{border-color:var(--ink)}
+
+/* ============ TOAST ============ */
+.toast-wrap{position:fixed;bottom:26px;left:50%;transform:translateX(-50%);z-index:400;display:flex;flex-direction:column;gap:10px;align-items:center}
+.toast{background:var(--ink);color:#f4e8cd;font-size:13.5px;font-weight:500;padding:13px 24px;border-radius:999px;box-shadow:var(--shadow-lg);display:flex;align-items:center;gap:10px;animation:toastIn .35s cubic-bezier(.22,1,.36,1)}
+.toast .dot{width:8px;height:8px;border-radius:50%;background:#25d366}
+@keyframes toastIn{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:translateY(0)}}
+
+/* ============ REVEAL ============ */
+.reveal{opacity:0;transform:translateY(26px);transition:opacity .7s,transform .7s}
+.reveal.in{opacity:1;transform:translateY(0)}
+@media (prefers-reduced-motion:reduce){.reveal{opacity:1;transform:none;transition:none}.hero-chip,.hero-tag{animation:none}}
+
+/* ============ RESPONSIVE ============ */
+@media (max-width:1024px){
+  .grid{grid-template-columns:repeat(3,1fr)}
+  .promises{grid-template-columns:repeat(2,1fr)}
+  .foot-grid{grid-template-columns:1fr 1fr}
+  .hero-grid{grid-template-columns:1fr;gap:44px}
+  .hero-visual{justify-self:center}
+  nav.main{display:none}
+  .burger{display:grid}
+}
+@media (max-width:768px){
+  .grid{grid-template-columns:repeat(2,1fr);gap:10px}
+  .tests{grid-template-columns:1fr}
+  .story-grid{grid-template-columns:1fr;gap:34px}
+  .story-img{max-width:340px;margin:0 auto}
+  .wa-banner{padding:34px 28px}
+  .cat-set{gap:24px;padding-right:24px}
+  .cat{width:92px}
+  .cat-img{width:88px;height:88px}
+  section{padding:56px 0}
+}
+@media (max-width:520px){
+  .promises{grid-template-columns:1fr}
+  .foot-grid{grid-template-columns:1fr;gap:34px}
+  .hero-chip{left:-6px}
+  .hero-tag{right:-4px}
+  .card-body{padding:12px 13px 16px}
+  .card-name{font-size:13.5px}
+  .card-price b{font-size:15px}
+  .wrap{padding:0 16px}
+}
+</style>
+</head>
+<body>
+
+<!-- ANNOUNCEMENT -->
+<div class="announce">Free shipping on orders above <b>₹1,999</b> &nbsp;·&nbsp; For customisations, reach us on <b>WhatsApp</b></div>
+
+<!-- HEADER -->
+<header>
+  <div class="wrap nav-row">
+    <a href="#" class="brand" aria-label="Aligaah Designs home">
+      <svg width="52" height="52" viewBox="0 0 120 120" aria-hidden="true">
+        <defs>
+          <linearGradient id="lg" x1="0" y1="0" x2="1" y2="1">
+            <stop offset="0" stop-color="#d4a94e"/><stop offset="1" stop-color="#8c6b26"/>
+          </linearGradient>
+        </defs>
+        <circle cx="60" cy="63" r="34" fill="none" stroke="url(#lg)" stroke-width="2.4"/>
+        <path d="M78 92 L40 22" stroke="url(#lg)" stroke-width="2.2" stroke-linecap="round"/>
+        <g>
+          <path d="M40 22 C30 30 26 44 30 54 C36 48 40 38 40 22Z" fill="none" stroke="#b8862f" stroke-width="1.1" opacity=".75"/>
+          <path d="M40 22 C50 28 55 40 52 52 C45 46 41 36 40 22Z" fill="none" stroke="#b8862f" stroke-width="1.1" opacity=".75"/>
+          <ellipse cx="41" cy="27" rx="9" ry="12" fill="#5f8c30"/>
+          <ellipse cx="41" cy="28" rx="5.6" ry="8" fill="#e2762c"/>
+          <ellipse cx="41" cy="29" rx="3" ry="4.6" fill="#186a70"/>
+        </g>
+        <text x="60" y="72" text-anchor="middle" font-family="Georgia,serif" font-size="30" fill="url(#lg)" font-weight="bold">AD</text>
+      </svg>
+      <span class="brand-name"><span class="top">ALIGAAH</span><br><span class="sub">DESIGNS</span></span>
+    </a>
+    <nav class="main">
+      <a href="#categories">Sarees</a>
+      <a href="#categories">Kurtis</a>
+      <a href="#categories">Churidars</a>
+      <a href="#new-arrivals">New Arrivals</a>
+      <a href="#popular">Popular</a>
+      <a href="#contact">Contact</a>
+    </nav>
+    <div class="icon-row">
+      <button class="icon-btn" id="searchBtn" aria-label="Search">
+        <svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>
+      </button>
+      <button class="icon-btn" id="wishBtn" aria-label="Wishlist">
+        <svg viewBox="0 0 24 24"><path d="M12 21s-7.5-4.7-9.5-9.2C1 8 3 4.8 6.4 4.8c2.2 0 3.9 1.3 5.6 3.4 1.7-2.1 3.4-3.4 5.6-3.4 3.4 0 5.4 3.2 3.9 7-2 4.5-9.5 9.2-9.5 9.2Z"/></svg>
+        <span class="badge" id="wishCount">0</span>
+      </button>
+      <button class="icon-btn" id="cartBtn" aria-label="Cart">
+        <svg viewBox="0 0 24 24"><path d="M6 7h12l1 13H5L6 7Z"/><path d="M9 7a3 3 0 0 1 6 0"/></svg>
+        <span class="badge" id="cartCount">0</span>
+      </button>
+      <button class="icon-btn burger" id="burgerBtn" aria-label="Menu">
+        <svg viewBox="0 0 24 24"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+      </button>
+    </div>
+  </div>
+  <div class="search-bar" id="searchBar">
+    <div class="wrap search-inner">
+      <input type="text" id="searchInput" placeholder="Search sarees, kurtis, churidars…" aria-label="Search products">
+      <button class="search-close" id="searchClose" aria-label="Close search">✕</button>
+    </div>
+  </div>
+</header>
+
+<!-- MOBILE MENU -->
+<div class="mobile-menu" id="mobileMenu">
+  <div class="mobile-panel">
+    <button class="mobile-close" id="mobileClose" aria-label="Close menu">✕</button>
+    <a href="#categories">Sarees</a>
+    <a href="#categories">Kurtis</a>
+    <a href="#categories">Churidars</a>
+    <a href="#new-arrivals">New Arrivals</a>
+    <a href="#popular">Popular</a>
+    <a href="#contact">Contact</a>
+  </div>
+</div>
+
+<!-- HERO -->
+<div class="hero">
+  <div class="wrap hero-grid">
+    <div>
+      <span class="kicker">Festive Edit 2026 · Fresh from the studio</span>
+      <h1>Elegance woven into <em>every thread</em></h1>
+      <p class="lead">Handcrafted sarees, kurtis and churidars designed in-house — fabric sourced straight from the weavers, finished by hand, and delivered to your doorstep across India.</p>
+      <div class="cta-row">
+        <a class="btn btn-gold" href="#new-arrivals">Shop New Arrivals</a>
+        <a class="btn btn-ghost" href="#categories">Explore Categories</a>
+      </div>
+      <div class="hero-stats">
+        <div class="stat"><b>500+</b><span>Original designs</span></div>
+        <div class="stat"><b>12,000+</b><span>Happy customers</span></div>
+        <div class="stat"><b>2–5 days</b><span>PAN-India delivery</span></div>
+      </div>
+    </div>
+    <div class="hero-visual">
+      <div class="hero-img-main">
+        <div class="hero-frame"></div>
+        <img src="https://images.pexels.com/photos/30004204/pexels-photo-30004204.jpeg?auto=compress&cs=tinysrgb&w=1000" alt="Woman in an elegant black and gold saree" loading="eager" onerror="this.style.display='none'">
+      </div>
+      <span class="hero-tag">✦ Bestselling weave</span>
+      <div class="hero-chip">
+        <img src="https://images.pexels.com/photos/37054322/pexels-photo-37054322.jpeg?auto=compress&cs=tinysrgb&w=200" alt="Golden saree" onerror="this.style.visibility='hidden'">
+        <div><div class="t">Mayura Zari Saree</div><div class="p">₹4,299 <s style="color:#a89a7f;font-weight:400;font-size:11px">₹5,499</s></div></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- CATEGORY CIRCLES -->
+<section class="cats" id="categories">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="sec-kicker">Curated for you</span>
+      <h2>Shop by Category</h2>
+      <div class="rule"></div>
+    </div>
+    <div class="cat-marquee">
+      <div class="cat-row" id="catRow">
+        <div class="cat-set">
+      <a href="#new-arrivals" class="cat">
+        <span class="cat-img"><img src="https://images.pexels.com/photos/37054322/pexels-photo-37054322.jpeg?auto=compress&cs=tinysrgb&w=300" alt="Sarees" loading="lazy"></span>
+        <b>Sarees</b><span>120+ styles</span>
+      </a>
+      <a href="#new-arrivals" class="cat">
+        <span class="cat-img"><img src="https://images.pexels.com/photos/28512776/pexels-photo-28512776.jpeg?auto=compress&cs=tinysrgb&w=300" alt="Kurtis" loading="lazy"></span>
+        <b>Kurtis</b><span>95+ styles</span>
+      </a>
+      <a href="#new-arrivals" class="cat">
+        <span class="cat-img"><img src="https://images.pexels.com/photos/20702676/pexels-photo-20702676.jpeg?auto=compress&cs=tinysrgb&w=300" alt="Churidars" loading="lazy"></span>
+        <b>Churidars</b><span>60+ styles</span>
+      </a>
+      <a href="#new-arrivals" class="cat">
+        <span class="cat-img"><img src="https://images.pexels.com/photos/8770996/pexels-photo-8770996.jpeg?auto=compress&cs=tinysrgb&w=300" alt="Anarkali" loading="lazy"></span>
+        <b>Anarkali</b><span>45+ styles</span>
+      </a>
+      <a href="#popular" class="cat">
+        <span class="cat-img"><img src="https://images.pexels.com/photos/36567501/pexels-photo-36567501.jpeg?auto=compress&cs=tinysrgb&w=300" alt="Gowns" loading="lazy"></span>
+        <b>Gowns</b><span>38+ styles</span>
+      </a>
+      <a href="#popular" class="cat">
+        <span class="cat-img"><img src="https://images.pexels.com/photos/14027977/pexels-photo-14027977.jpeg?auto=compress&cs=tinysrgb&w=300" alt="Co-ord Sets" loading="lazy"></span>
+        <b>Co-ord Sets</b><span>32+ styles</span>
+      </a>
+      <a href="#popular" class="cat">
+        <span class="cat-img"><img src="https://images.pexels.com/photos/13178920/pexels-photo-13178920.jpeg?auto=compress&cs=tinysrgb&w=300" alt="Kaftans" loading="lazy"></span>
+        <b>Kaftans</b><span>26+ styles</span>
+      </a>
+      <a href="#popular" class="cat">
+        <span class="cat-img"><img src="https://images.pexels.com/photos/36311379/pexels-photo-36311379.jpeg?auto=compress&cs=tinysrgb&w=300" alt="Budget Friendly" loading="lazy"></span>
+        <b>Budget Friendly</b><span>Under ₹1,499</span>
+      </a>
+    </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- NEW ARRIVALS -->
+<section id="new-arrivals">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="sec-kicker">Fresh from the studio</span>
+      <h2>New Arrivals</h2>
+      <p>This week's additions — limited pieces in each size, restocked every Friday.</p>
+      <div class="rule"></div>
+    </div>
+    <div class="grid" id="newGrid">
+
+      <div class="card reveal product" data-name="Mayura Zari Saree">
+        <div class="card-media">
+          <span class="flag new">New</span>
+          <button class="heart" aria-label="Add to wishlist"><svg viewBox="0 0 24 24"><path d="M12 21s-7.5-4.7-9.5-9.2C1 8 3 4.8 6.4 4.8c2.2 0 3.9 1.3 5.6 3.4 1.7-2.1 3.4-3.4 5.6-3.4 3.4 0 5.4 3.2 3.9 7-2 4.5-9.5 9.2-9.5 9.2Z"/></svg></button>
+          <img src="https://images.pexels.com/photos/37054322/pexels-photo-37054322.jpeg?auto=compress&cs=tinysrgb&w=700" alt="Mayura Zari Saree" loading="lazy">
+        </div>
+        <div class="card-body">
+          <span class="card-cat">Saree</span>
+          <span class="card-name">Mayura Zari Saree</span>
+          <span class="card-fab">Golden soft silk · woven zari pallu</span>
+          <div class="card-price"><b>₹4,299</b><s>₹5,499</s><span class="off">22% off</span></div>
+          <button class="add-btn" data-id="n1" data-name="Mayura Zari Saree" data-price="4299" data-cat="Saree" data-img="https://images.pexels.com/photos/37054322/pexels-photo-37054322.jpeg?auto=compress&cs=tinysrgb&w=200">Add to Cart</button>
+        </div>
+      </div>
+
+      <div class="card reveal product" data-name="Noor Chikankari Kurti">
+        <div class="card-media">
+          <span class="flag new">New</span>
+          <button class="heart" aria-label="Add to wishlist"><svg viewBox="0 0 24 24"><path d="M12 21s-7.5-4.7-9.5-9.2C1 8 3 4.8 6.4 4.8c2.2 0 3.9 1.3 5.6 3.4 1.7-2.1 3.4-3.4 5.6-3.4 3.4 0 5.4 3.2 3.9 7-2 4.5-9.5 9.2-9.5 9.2Z"/></svg></button>
+          <img src="https://images.pexels.com/photos/28512776/pexels-photo-28512776.jpeg?auto=compress&cs=tinysrgb&w=700" alt="Noor Chikankari Kurti" loading="lazy">
+        </div>
+        <div class="card-body">
+          <span class="card-cat">Kurti</span>
+          <span class="card-name">Noor Chikankari Kurti</span>
+          <span class="card-fab">White cotton · hand chikankari</span>
+          <div class="card-price"><b>₹1,749</b><s>₹2,199</s><span class="off">20% off</span></div>
+          <button class="add-btn" data-id="n2" data-name="Noor Chikankari Kurti" data-price="1749" data-cat="Kurti" data-img="https://images.pexels.com/photos/28512776/pexels-photo-28512776.jpeg?auto=compress&cs=tinysrgb&w=200">Add to Cart</button>
+        </div>
+      </div>
+
+      <div class="card reveal product" data-name="Meher Churidar Set">
+        <div class="card-media">
+          <span class="flag new">New</span>
+          <button class="heart" aria-label="Add to wishlist"><svg viewBox="0 0 24 24"><path d="M12 21s-7.5-4.7-9.5-9.2C1 8 3 4.8 6.4 4.8c2.2 0 3.9 1.3 5.6 3.4 1.7-2.1 3.4-3.4 5.6-3.4 3.4 0 5.4 3.2 3.9 7-2 4.5-9.5 9.2-9.5 9.2Z"/></svg></button>
+          <img src="https://images.pexels.com/photos/20702676/pexels-photo-20702676.jpeg?auto=compress&cs=tinysrgb&w=700" alt="Meher Churidar Set" loading="lazy">
+        </div>
+        <div class="card-body">
+          <span class="card-cat">Churidar</span>
+          <span class="card-name">Meher Churidar Set</span>
+          <span class="card-fab">Crimson georgette · dupatta included</span>
+          <div class="card-price"><b>₹2,899</b><s>₹3,599</s><span class="off">19% off</span></div>
+          <button class="add-btn" data-id="n3" data-name="Meher Churidar Set" data-price="2899" data-cat="Churidar" data-img="https://images.pexels.com/photos/20702676/pexels-photo-20702676.jpeg?auto=compress&cs=tinysrgb&w=200">Add to Cart</button>
+        </div>
+      </div>
+
+      <div class="card reveal product" data-name="Raabta Anarkali">
+        <div class="card-media">
+          <span class="flag new">New</span>
+          <button class="heart" aria-label="Add to wishlist"><svg viewBox="0 0 24 24"><path d="M12 21s-7.5-4.7-9.5-9.2C1 8 3 4.8 6.4 4.8c2.2 0 3.9 1.3 5.6 3.4 1.7-2.1 3.4-3.4 5.6-3.4 3.4 0 5.4 3.2 3.9 7-2 4.5-9.5 9.2-9.5 9.2Z"/></svg></button>
+          <img src="https://images.pexels.com/photos/8770996/pexels-photo-8770996.jpeg?auto=compress&cs=tinysrgb&w=700" alt="Raabta Anarkali" loading="lazy">
+        </div>
+        <div class="card-body">
+          <span class="card-cat">Anarkali</span>
+          <span class="card-name">Raabta Anarkali</span>
+          <span class="card-fab">Sunshine yellow · mirror embroidery</span>
+          <div class="card-price"><b>₹4,650</b><s>₹5,800</s><span class="off">20% off</span></div>
+          <button class="add-btn" data-id="n4" data-name="Raabta Anarkali" data-price="4650" data-cat="Anarkali" data-img="https://images.pexels.com/photos/8770996/pexels-photo-8770996.jpeg?auto=compress&cs=tinysrgb&w=200">Add to Cart</button>
+        </div>
+      </div>
+
+      <div class="card reveal product" data-name="Kanak Kota Saree">
+        <div class="card-media">
+          <span class="flag new">New</span>
+          <button class="heart" aria-label="Add to wishlist"><svg viewBox="0 0 24 24"><path d="M12 21s-7.5-4.7-9.5-9.2C1 8 3 4.8 6.4 4.8c2.2 0 3.9 1.3 5.6 3.4 1.7-2.1 3.4-3.4 5.6-3.4 3.4 0 5.4 3.2 3.9 7-2 4.5-9.5 9.2-9.5 9.2Z"/></svg></button>
+          <img src="https://images.pexels.com/photos/28943474/pexels-photo-28943474.jpeg?auto=compress&cs=tinysrgb&w=700" alt="Kanak Kota Saree" loading="lazy">
+        </div>
+        <div class="card-body">
+          <span class="card-cat">Saree</span>
+          <span class="card-name">Kanak Kota Saree</span>
+          <span class="card-fab">Marigold kota doria · gold border</span>
+          <div class="card-price"><b>₹2,999</b><s>₹3,750</s><span class="off">20% off</span></div>
+          <button class="add-btn" data-id="n5" data-name="Kanak Kota Saree" data-price="2999" data-cat="Saree" data-img="https://images.pexels.com/photos/28943474/pexels-photo-28943474.jpeg?auto=compress&cs=tinysrgb&w=200">Add to Cart</button>
+        </div>
+      </div>
+
+      <div class="card reveal product" data-name="Ira Silk Co-ord">
+        <div class="card-media">
+          <span class="flag new">New</span>
+          <button class="heart" aria-label="Add to wishlist"><svg viewBox="0 0 24 24"><path d="M12 21s-7.5-4.7-9.5-9.2C1 8 3 4.8 6.4 4.8c2.2 0 3.9 1.3 5.6 3.4 1.7-2.1 3.4-3.4 5.6-3.4 3.4 0 5.4 3.2 3.9 7-2 4.5-9.5 9.2-9.5 9.2Z"/></svg></button>
+          <img src="https://images.pexels.com/photos/14027977/pexels-photo-14027977.jpeg?auto=compress&cs=tinysrgb&w=700" alt="Ira Silk Co-ord" loading="lazy">
+        </div>
+        <div class="card-body">
+          <span class="card-cat">Co-ord Set</span>
+          <span class="card-name">Ira Silk Co-ord</span>
+          <span class="card-fab">Two-piece art silk · relaxed fit</span>
+          <div class="card-price"><b>₹3,150</b><s>₹3,899</s><span class="off">19% off</span></div>
+          <button class="add-btn" data-id="n6" data-name="Ira Silk Co-ord" data-price="3150" data-cat="Co-ord Set" data-img="https://images.pexels.com/photos/14027977/pexels-photo-14027977.jpeg?auto=compress&cs=tinysrgb&w=200">Add to Cart</button>
+        </div>
+      </div>
+
+      <div class="card reveal product" data-name="Vani A-line Kurti">
+        <div class="card-media">
+          <span class="flag new">New</span>
+          <button class="heart" aria-label="Add to wishlist"><svg viewBox="0 0 24 24"><path d="M12 21s-7.5-4.7-9.5-9.2C1 8 3 4.8 6.4 4.8c2.2 0 3.9 1.3 5.6 3.4 1.7-2.1 3.4-3.4 5.6-3.4 3.4 0 5.4 3.2 3.9 7-2 4.5-9.5 9.2-9.5 9.2Z"/></svg></button>
+          <img src="https://images.pexels.com/photos/28512787/pexels-photo-28512787.jpeg?auto=compress&cs=tinysrgb&w=700" alt="Vani A-line Kurti" loading="lazy">
+        </div>
+        <div class="card-body">
+          <span class="card-cat">Kurti</span>
+          <span class="card-name">Vani A-line Kurti</span>
+          <span class="card-fab">Pistachio chikankari · breathable cotton</span>
+          <div class="card-price"><b>₹1,499</b><s>₹1,899</s><span class="off">21% off</span></div>
+          <button class="add-btn" data-id="n7" data-name="Vani A-line Kurti" data-price="1499" data-cat="Kurti" data-img="https://images.pexels.com/photos/28512787/pexels-photo-28512787.jpeg?auto=compress&cs=tinysrgb&w=200">Add to Cart</button>
+        </div>
+      </div>
+
+      <div class="card reveal product" data-name="Lehar Kaftan">
+        <div class="card-media">
+          <span class="flag new">New</span>
+          <button class="heart" aria-label="Add to wishlist"><svg viewBox="0 0 24 24"><path d="M12 21s-7.5-4.7-9.5-9.2C1 8 3 4.8 6.4 4.8c2.2 0 3.9 1.3 5.6 3.4 1.7-2.1 3.4-3.4 5.6-3.4 3.4 0 5.4 3.2 3.9 7-2 4.5-9.5 9.2-9.5 9.2Z"/></svg></button>
+          <img src="https://images.pexels.com/photos/13178920/pexels-photo-13178920.jpeg?auto=compress&cs=tinysrgb&w=700" alt="Lehar Kaftan" loading="lazy">
+        </div>
+        <div class="card-body">
+          <span class="card-cat">Kaftan</span>
+          <span class="card-name">Lehar Kaftan</span>
+          <span class="card-fab">Ocean blue rayon · easy breezy drape</span>
+          <div class="card-price"><b>₹2,450</b><s>₹2,999</s><span class="off">18% off</span></div>
+          <button class="add-btn" data-id="n8" data-name="Lehar Kaftan" data-price="2450" data-cat="Kaftan" data-img="https://images.pexels.com/photos/13178920/pexels-photo-13178920.jpeg?auto=compress&cs=tinysrgb&w=200">Add to Cart</button>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- WHATSAPP BANNER -->
+<section style="padding-top:0">
+  <div class="wrap">
+    <div class="wa-banner reveal">
+      <div>
+        <h3>Want it customised? Just say the word.</h3>
+        <p>Sleeve length, blouse stitching, fall &amp; pico, plus sizes — message us on WhatsApp and our studio will tailor any piece for you.</p>
+      </div>
+      <a class="btn btn-wa" href="#" id="waBanner">
+        <svg width="19" height="19" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5.1-1.3A10 10 0 1 0 12 2Zm5.4 14.1c-.2.6-1.3 1.2-1.8 1.2-.5.1-1 .2-3.4-.7-2.9-1.1-4.7-4-4.9-4.2-.1-.2-1.1-1.5-1.1-2.9s.7-2 1-2.3c.2-.3.5-.3.7-.3h.5c.2 0 .4 0 .6.5s.8 1.9.8 2c.1.1.1.3 0 .5-.3.6-.7.9-.5 1.2.7 1.2 1.6 2 2.8 2.6.3.2.5.1.7-.1l.9-1c.2-.3.4-.2.7-.1l2 .9c.3.2.5.3.6.4 0 .2 0 .8-.2 1.3Z"/></svg>
+        Chat on WhatsApp
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- POPULAR COLLECTIONS -->
+<section class="alt" id="popular">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="sec-kicker">Loved by 12,000+ customers</span>
+      <h2>Popular Collections</h2>
+      <p>Our most re-ordered pieces — tried, trusted and treasured across India.</p>
+      <div class="rule"></div>
+    </div>
+    <div class="grid" id="popGrid">
+
+      <div class="card reveal product" data-name="Aparna Kanjivaram Saree">
+        <div class="card-media">
+          <span class="flag best">Bestseller</span>
+          <button class="heart" aria-label="Add to wishlist"><svg viewBox="0 0 24 24"><path d="M12 21s-7.5-4.7-9.5-9.2C1 8 3 4.8 6.4 4.8c2.2 0 3.9 1.3 5.6 3.4 1.7-2.1 3.4-3.4 5.6-3.4 3.4 0 5.4 3.2 3.9 7-2 4.5-9.5 9.2-9.5 9.2Z"/></svg></button>
+          <img src="https://images.pexels.com/photos/28918047/pexels-photo-28918047.jpeg?auto=compress&cs=tinysrgb&w=700" alt="Aparna Kanjivaram Saree" loading="lazy">
+        </div>
+        <div class="card-body">
+          <span class="card-cat">Saree</span>
+          <span class="card-name">Aparna Kanjivaram Saree</span>
+          <span class="card-fab">Pure zari kanjivaram · temple border</span>
+          <div class="card-price"><b>₹6,999</b><s>₹8,999</s><span class="off">22% off</span></div>
+          <button class="add-btn" data-id="p1" data-name="Aparna Kanjivaram Saree" data-price="6999" data-cat="Saree" data-img="https://images.pexels.com/photos/28918047/pexels-photo-28918047.jpeg?auto=compress&cs=tinysrgb&w=200">Add to Cart</button>
+        </div>
+      </div>
+
+      <div class="card reveal product" data-name="Zoya Festive Anarkali">
+        <div class="card-media">
+          <span class="flag best">Bestseller</span>
+          <button class="heart" aria-label="Add to wishlist"><svg viewBox="0 0 24 24"><path d="M12 21s-7.5-4.7-9.5-9.2C1 8 3 4.8 6.4 4.8c2.2 0 3.9 1.3 5.6 3.4 1.7-2.1 3.4-3.4 5.6-3.4 3.4 0 5.4 3.2 3.9 7-2 4.5-9.5 9.2-9.5 9.2Z"/></svg></button>
+          <img src="https://images.pexels.com/photos/36567501/pexels-photo-36567501.jpeg?auto=compress&cs=tinysrgb&w=700" alt="Zoya Festive Anarkali" loading="lazy">
+        </div>
+        <div class="card-body">
+          <span class="card-cat">Anarkali</span>
+          <span class="card-name">Zoya Festive Anarkali</span>
+          <span class="card-fab">Scarlet georgette · zardozi neckline</span>
+          <div class="card-price"><b>₹5,250</b><s>₹6,500</s><span class="off">19% off</span></div>
+          <button class="add-btn" data-id="p2" data-name="Zoya Festive Anarkali" data-price="5250" data-cat="Anarkali" data-img="https://images.pexels.com/photos/36567501/pexels-photo-36567501.jpeg?auto=compress&cs=tinysrgb&w=200">Add to Cart</button>
+        </div>
+      </div>
+
+      <div class="card reveal product" data-name="Aaloka Cotton Kurti">
+        <div class="card-media">
+          <span class="flag best">Bestseller</span>
+          <button class="heart" aria-label="Add to wishlist"><svg viewBox="0 0 24 24"><path d="M12 21s-7.5-4.7-9.5-9.2C1 8 3 4.8 6.4 4.8c2.2 0 3.9 1.3 5.6 3.4 1.7-2.1 3.4-3.4 5.6-3.4 3.4 0 5.4 3.2 3.9 7-2 4.5-9.5 9.2-9.5 9.2Z"/></svg></button>
+          <img src="https://images.pexels.com/photos/36311379/pexels-photo-36311379.jpeg?auto=compress&cs=tinysrgb&w=700" alt="Aaloka Cotton Kurti" loading="lazy">
+        </div>
+        <div class="card-body">
+          <span class="card-cat">Kurti</span>
+          <span class="card-name">Aaloka Cotton Kurti</span>
+          <span class="card-fab">Rose pink mulmul · everyday wear</span>
+          <div class="card-price"><b>₹1,299</b><s>₹1,599</s><span class="off">19% off</span></div>
+          <button class="add-btn" data-id="p3" data-name="Aaloka Cotton Kurti" data-price="1299" data-cat="Kurti" data-img="https://images.pexels.com/photos/36311379/pexels-photo-36311379.jpeg?auto=compress&cs=tinysrgb&w=200">Add to Cart</button>
+        </div>
+      </div>
+
+      <div class="card reveal product" data-name="Devika Churidar Set">
+        <div class="card-media">
+          <span class="flag best">Bestseller</span>
+          <button class="heart" aria-label="Add to wishlist"><svg viewBox="0 0 24 24"><path d="M12 21s-7.5-4.7-9.5-9.2C1 8 3 4.8 6.4 4.8c2.2 0 3.9 1.3 5.6 3.4 1.7-2.1 3.4-3.4 5.6-3.4 3.4 0 5.4 3.2 3.9 7-2 4.5-9.5 9.2-9.5 9.2Z"/></svg></button>
+          <img src="https://images.pexels.com/photos/14027903/pexels-photo-14027903.jpeg?auto=compress&cs=tinysrgb&w=700" alt="Devika Churidar Set" loading="lazy">
+        </div>
+        <div class="card-body">
+          <span class="card-cat">Churidar</span>
+          <span class="card-name">Devika Churidar Set</span>
+          <span class="card-fab">Festive crepe · three-piece set</span>
+          <div class="card-price"><b>₹3,199</b><s>₹3,999</s><span class="off">20% off</span></div>
+          <button class="add-btn" data-id="p4" data-name="Devika Churidar Set" data-price="3199" data-cat="Churidar" data-img="https://images.pexels.com/photos/14027903/pexels-photo-14027903.jpeg?auto=compress&cs=tinysrgb&w=200">Add to Cart</button>
+        </div>
+      </div>
+
+      <div class="card reveal product" data-name="Tara Organza Saree">
+        <div class="card-media">
+          <span class="flag best">Bestseller</span>
+          <button class="heart" aria-label="Add to wishlist"><svg viewBox="0 0 24 24"><path d="M12 21s-7.5-4.7-9.5-9.2C1 8 3 4.8 6.4 4.8c2.2 0 3.9 1.3 5.6 3.4 1.7-2.1 3.4-3.4 5.6-3.4 3.4 0 5.4 3.2 3.9 7-2 4.5-9.5 9.2-9.5 9.2Z"/></svg></button>
+          <img src="https://images.pexels.com/photos/28135787/pexels-photo-28135787.jpeg?auto=compress&cs=tinysrgb&w=700" alt="Tara Organza Saree" loading="lazy">
+        </div>
+        <div class="card-body">
+          <span class="card-cat">Saree</span>
+          <span class="card-name">Tara Organza Saree</span>
+          <span class="card-fab">Violet organza · scalloped edge</span>
+          <div class="card-price"><b>₹4,499</b><s>₹5,499</s><span class="off">18% off</span></div>
+          <button class="add-btn" data-id="p5" data-name="Tara Organza Saree" data-price="4499" data-cat="Saree" data-img="https://images.pexels.com/photos/28135787/pexels-photo-28135787.jpeg?auto=compress&cs=tinysrgb&w=200">Add to Cart</button>
+        </div>
+      </div>
+
+      <div class="card reveal product" data-name="Kaya Co-ord Set">
+        <div class="card-media">
+          <span class="flag best">Bestseller</span>
+          <button class="heart" aria-label="Add to wishlist"><svg viewBox="0 0 24 24"><path d="M12 21s-7.5-4.7-9.5-9.2C1 8 3 4.8 6.4 4.8c2.2 0 3.9 1.3 5.6 3.4 1.7-2.1 3.4-3.4 5.6-3.4 3.4 0 5.4 3.2 3.9 7-2 4.5-9.5 9.2-9.5 9.2Z"/></svg></button>
+          <img src="https://images.pexels.com/photos/37593738/pexels-photo-37593738.jpeg?auto=compress&cs=tinysrgb&w=700" alt="Kaya Co-ord Set" loading="lazy">
+        </div>
+        <div class="card-body">
+          <span class="card-cat">Co-ord Set</span>
+          <span class="card-name">Kaya Co-ord Set</span>
+          <span class="card-fab">Block-printed cotton · pockets!</span>
+          <div class="card-price"><b>₹2,899</b><s>₹3,499</s><span class="off">17% off</span></div>
+          <button class="add-btn" data-id="p6" data-name="Kaya Co-ord Set" data-price="2899" data-cat="Co-ord Set" data-img="https://images.pexels.com/photos/37593738/pexels-photo-37593738.jpeg?auto=compress&cs=tinysrgb&w=200">Add to Cart</button>
+        </div>
+      </div>
+
+      <div class="card reveal product" data-name="Nira Kaftan">
+        <div class="card-media">
+          <span class="flag best">Bestseller</span>
+          <button class="heart" aria-label="Add to wishlist"><svg viewBox="0 0 24 24"><path d="M12 21s-7.5-4.7-9.5-9.2C1 8 3 4.8 6.4 4.8c2.2 0 3.9 1.3 5.6 3.4 1.7-2.1 3.4-3.4 5.6-3.4 3.4 0 5.4 3.2 3.9 7-2 4.5-9.5 9.2-9.5 9.2Z"/></svg></button>
+          <img src="https://images.pexels.com/photos/30244535/pexels-photo-30244535.jpeg?auto=compress&cs=tinysrgb&w=700" alt="Nira Kaftan" loading="lazy">
+        </div>
+        <div class="card-body">
+          <span class="card-cat">Kaftan</span>
+          <span class="card-name">Nira Kaftan</span>
+          <span class="card-fab">Sky blue modal · lounge to lunch</span>
+          <div class="card-price"><b>₹2,650</b><s>₹3,250</s><span class="off">18% off</span></div>
+          <button class="add-btn" data-id="p7" data-name="Nira Kaftan" data-price="2650" data-cat="Kaftan" data-img="https://images.pexels.com/photos/30244535/pexels-photo-30244535.jpeg?auto=compress&cs=tinysrgb&w=200">Add to Cart</button>
+        </div>
+      </div>
+
+      <div class="card reveal product" data-name="Ahalya Silk Kurti">
+        <div class="card-media">
+          <span class="flag best">Bestseller</span>
+          <button class="heart" aria-label="Add to wishlist"><svg viewBox="0 0 24 24"><path d="M12 21s-7.5-4.7-9.5-9.2C1 8 3 4.8 6.4 4.8c2.2 0 3.9 1.3 5.6 3.4 1.7-2.1 3.4-3.4 5.6-3.4 3.4 0 5.4 3.2 3.9 7-2 4.5-9.5 9.2-9.5 9.2Z"/></svg></button>
+          <img src="https://images.pexels.com/photos/35521738/pexels-photo-35521738.jpeg?auto=compress&cs=tinysrgb&w=700" alt="Ahalya Silk Kurti" loading="lazy">
+        </div>
+        <div class="card-body">
+          <span class="card-cat">Kurti</span>
+          <span class="card-name">Ahalya Silk Kurti</span>
+          <span class="card-fab">Ruby art silk · festive ready</span>
+          <div class="card-price"><b>₹1,999</b><s>₹2,499</s><span class="off">20% off</span></div>
+          <button class="add-btn" data-id="p8" data-name="Ahalya Silk Kurti" data-price="1999" data-cat="Kurti" data-img="https://images.pexels.com/photos/35521738/pexels-photo-35521738.jpeg?auto=compress&cs=tinysrgb&w=200">Add to Cart</button>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- PROMISES -->
+<section>
+  <div class="wrap">
+    <div class="promises">
+      <div class="promise reveal">
+        <span class="ic"><svg viewBox="0 0 24 24"><path d="M12 3l2.4 4.8L20 9l-4 3.9.9 5.6L12 15.8 7.1 18.5 8 12.9 4 9l5.6-1.2L12 3Z"/></svg></span>
+        <b>Handpicked fabrics</b>
+        <span>Every weave is sourced directly from trusted looms and checked by hand.</span>
+      </div>
+      <div class="promise reveal">
+        <span class="ic"><svg viewBox="0 0 24 24"><path d="M21 11.5a8.5 8.5 0 0 1-12.4 7.6L3 21l1.9-5.6A8.5 8.5 0 1 1 21 11.5Z"/></svg></span>
+        <b>WhatsApp customisation</b>
+        <span>Blouse stitching, sleeve lengths, plus sizes — tailored to you.</span>
+      </div>
+      <div class="promise reveal">
+        <span class="ic"><svg viewBox="0 0 24 24"><path d="M3 7h11v10H3zM14 10h4l3 3v4h-7zM7.5 17a1.8 1.8 0 1 0 0 3.6 1.8 1.8 0 0 0 0-3.6ZM17.5 17a1.8 1.8 0 1 0 0 3.6 1.8 1.8 0 0 0 0-3.6Z"/></svg></span>
+        <b>PAN-India delivery</b>
+        <span>Ships in 24 hours, at your door in 2–5 days, tracked end to end.</span>
+      </div>
+      <div class="promise reveal">
+        <span class="ic"><svg viewBox="0 0 24 24"><path d="M4 9a8 8 0 0 1 14-3.5M20 15a8 8 0 0 1-14 3.5M18 2v4h-4M6 22v-4h4"/></svg></span>
+        <b>7-day easy exchange</b>
+        <span>Wrong size or change of heart? Exchanges made simple, no questions.</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TESTIMONIALS -->
+<section class="alt">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="sec-kicker">Word of mouth</span>
+      <h2>What our customers say</h2>
+      <div class="rule"></div>
+    </div>
+    <div class="tests">
+      <div class="test reveal">
+        <span class="stars">★★★★★</span>
+        <p>"The Mayura saree looked even better in person than on the site. The zari work is so fine — I wore it to my sister's engagement and got asked about it all evening."</p>
+        <div class="who"><span class="avatar">A</span><div><b>Anjali R.</b><span>Kochi</span></div></div>
+      </div>
+      <div class="test reveal">
+        <span class="stars">★★★★★</span>
+        <p>"I messaged them on WhatsApp to shorten the sleeves on a kurti and it arrived exactly how I asked, in four days. This is how online shopping should work."</p>
+        <div class="who"><span class="avatar">M</span><div><b>Meera S.</b><span>Bengaluru</span></div></div>
+      </div>
+      <div class="test reveal">
+        <span class="stars">★★★★★</span>
+        <p>"Third order this year. The cotton kurtis wash beautifully and the colours haven't faded one bit. Quality you can feel the moment you open the packet."</p>
+        <div class="who"><span class="avatar">D</span><div><b>Divya K.</b><span>Chennai</span></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- STORY -->
+<section id="story">
+  <div class="wrap story-grid">
+    <div class="story-img reveal">
+      <img src="https://images.pexels.com/photos/17113983/pexels-photo-17113983.jpeg?auto=compress&cs=tinysrgb&w=700" alt="Woman in a red saree with flowers" loading="lazy">
+    </div>
+    <div class="story reveal">
+      <span class="sec-kicker">The Aligaah story</span>
+      <h2>Designed in-house.<br>Finished by hand.</h2>
+      <p>Aligaah Designs began with a single loom and a simple belief — that everyday ethnic wear deserves the same care as bridal couture. Today, our small team designs every saree, kurti and churidar in-house, sources fabric directly from weavers, and checks each piece by hand before it leaves the studio.</p>
+      <p>The peacock feather in our emblem is a promise: colour that lasts, and grace in every drape.</p>
+      <p class="sig">— The Aligaah family</p>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer id="contact">
+  <div class="wrap foot-grid">
+    <div class="foot-brand">
+      <a href="#" class="brand" style="filter:brightness(1.15)">
+        <svg width="48" height="48" viewBox="0 0 120 120" aria-hidden="true">
+          <circle cx="60" cy="63" r="34" fill="none" stroke="#d4a94e" stroke-width="2.4"/>
+          <path d="M78 92 L40 22" stroke="#d4a94e" stroke-width="2.2" stroke-linecap="round"/>
+          <ellipse cx="41" cy="27" rx="9" ry="12" fill="#5f8c30"/>
+          <ellipse cx="41" cy="28" rx="5.6" ry="8" fill="#e2762c"/>
+          <ellipse cx="41" cy="29" rx="3" ry="4.6" fill="#186a70"/>
+          <text x="60" y="72" text-anchor="middle" font-family="Georgia,serif" font-size="30" fill="#e8ce8f" font-weight="bold">AD</text>
+        </svg>
+        <span class="brand-name"><span class="top" style="color:#f0e3c2">ALIGAAH</span><br><span class="sub" style="color:#c9a86a">DESIGNS</span></span>
+      </a>
+      <p>Handcrafted sarees, kurtis, churidars and ethnic wear — designed in-house and shipped across India.</p>
+      <div class="socials">
+        <a class="soc" href="#" aria-label="Instagram"><svg viewBox="0 0 24 24"><path d="M12 2.2c3.2 0 3.6 0 4.9.1 3.3.1 4.8 1.7 4.9 4.9.1 1.3.1 1.6.1 4.8s0 3.6-.1 4.8c-.1 3.2-1.7 4.8-4.9 4.9-1.3.1-1.6.1-4.9.1s-3.6 0-4.8-.1c-3.3-.1-4.8-1.7-4.9-4.9-.1-1.3-.1-1.6-.1-4.8s0-3.6.1-4.8C2.4 4 4 2.4 7.2 2.3 8.4 2.2 8.8 2.2 12 2.2Zm0 3.7a6.1 6.1 0 1 0 0 12.2 6.1 6.1 0 0 0 0-12.2Zm0 10a4 4 0 1 1 0-7.9 4 4 0 0 1 0 7.9Zm6.3-10.2a1.4 1.4 0 1 0 0 2.9 1.4 1.4 0 0 0 0-2.9Z"/></svg></a>
+        <a class="soc" href="#" aria-label="Facebook"><svg viewBox="0 0 24 24"><path d="M13.5 21v-8h2.7l.4-3.1h-3.1V7.9c0-.9.3-1.5 1.6-1.5h1.6V3.6c-.3 0-1.3-.1-2.4-.1-2.4 0-4 1.4-4 4.1v2.3H7.6V13h2.7v8h3.2Z"/></svg></a>
+        <a class="soc" href="#" aria-label="YouTube"><svg viewBox="0 0 24 24"><path d="M21.6 7.2a2.5 2.5 0 0 0-1.8-1.8C18.2 5 12 5 12 5s-6.2 0-7.8.4A2.5 2.5 0 0 0 2.4 7.2 26 26 0 0 0 2 12a26 26 0 0 0 .4 4.8 2.5 2.5 0 0 0 1.8 1.8C5.8 19 12 19 12 19s6.2 0 7.8-.4a2.5 2.5 0 0 0 1.8-1.8A26 26 0 0 0 22 12a26 26 0 0 0-.4-4.8ZM10 15.2V8.8L15.5 12 10 15.2Z"/></svg></a>
+      </div>
+    </div>
+    <div>
+      <h4>Shop</h4>
+      <div class="foot-links">
+        <a href="#categories">Sarees</a>
+        <a href="#categories">Kurtis</a>
+        <a href="#categories">Churidars</a>
+        <a href="#categories">Anarkali</a>
+        <a href="#new-arrivals">New Arrivals</a>
+        <a href="#popular">Popular Collections</a>
+      </div>
+    </div>
+    <div>
+      <h4>Help</h4>
+      <div class="foot-links">
+        <a href="#">Shipping &amp; delivery</a>
+        <a href="#">Exchange policy</a>
+        <a href="#">Size guide</a>
+        <a href="#">Track your order</a>
+        <a href="#">FAQs</a>
+      </div>
+    </div>
+    <div class="foot-contact">
+      <h4>Get in touch</h4>
+      <p>hello@aligaahdesigns.com</p>
+      <p>Mon–Sat, 10 am – 7 pm IST</p>
+      <a class="btn btn-wa" href="#" id="waFooter" style="margin-top:8px">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5.1-1.3A10 10 0 1 0 12 2Zm5.4 14.1c-.2.6-1.3 1.2-1.8 1.2-.5.1-1 .2-3.4-.7-2.9-1.1-4.7-4-4.9-4.2-.1-.2-1.1-1.5-1.1-2.9s.7-2 1-2.3c.2-.3.5-.3.7-.3h.5c.2 0 .4 0 .6.5s.8 1.9.8 2c.1.1.1.3 0 .5-.3.6-.7.9-.5 1.2.7 1.2 1.6 2 2.8 2.6.3.2.5.1.7-.1l.9-1c.2-.3.4-.2.7-.1l2 .9c.3.2.5.3.6.4 0 .2 0 .8-.2 1.3Z"/></svg>
+        Chat on WhatsApp
+      </a>
+    </div>
+  </div>
+  <div class="wrap foot-bottom">
+    <span>© <span id="year"></span> Aligaah Designs. All rights reserved.</span>
+    <span>Made with care in India 🇮🇳</span>
+  </div>
+</footer>
+
+<!-- CART DRAWER -->
+<div class="cart-overlay" id="cartOverlay"></div>
+<aside class="cart-drawer" id="cartDrawer" aria-label="Shopping cart">
+  <div class="cart-head">
+    <div><b>Your Bag</b> <span id="cartHeadCount">(0 items)</span></div>
+    <button class="cart-close" id="cartClose" aria-label="Close cart">✕</button>
+  </div>
+  <div class="ship-bar">
+    <div class="msg" id="shipMsg">Add <b>₹1,999</b> more for free shipping</div>
+    <div class="ship-track"><div class="ship-fill" id="shipFill"></div></div>
+  </div>
+  <div class="cart-items" id="cartItems"></div>
+  <div class="cart-foot">
+    <div class="cart-sub"><span>Subtotal</span><b id="cartSubtotal">₹0</b></div>
+    <p class="cart-note">Taxes included. Shipping calculated at checkout.</p>
+    <button class="btn btn-wa btn-checkout" id="checkoutBtn">
+      <svg width="19" height="19" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5.1-1.3A10 10 0 1 0 12 2Zm5.4 14.1c-.2.6-1.3 1.2-1.8 1.2-.5.1-1 .2-3.4-.7-2.9-1.1-4.7-4-4.9-4.2-.1-.2-1.1-1.5-1.1-2.9s.7-2 1-2.3c.2-.3.5-.3.7-.3h.5c.2 0 .4 0 .6.5s.8 1.9.8 2c.1.1.1.3 0 .5-.3.6-.7.9-.5 1.2.7 1.2 1.6 2 2.8 2.6.3.2.5.1.7-.1l.9-1c.2-.3.4-.2.7-.1l2 .9c.3.2.5.3.6.4 0 .2 0 .8-.2 1.3Z"/></svg>
+      Checkout on WhatsApp
+    </button>
+    <button class="btn-keep" id="keepShopping">Continue shopping</button>
+  </div>
+</aside>
+
+<div class="toast-wrap" id="toastWrap"></div>
+
+<script>
+// ===== CONFIG =====
+var WHATSAPP_NUMBER = "91XXXXXXXXXX"; // <-- replace with your number, e.g. 919876543210
+var FREE_SHIP = 1999;
+
+// ===== STATE =====
+var cart = []; // {id,name,price,cat,img,qty}
+var wishCountN = 0;
+
+// ===== HELPERS =====
+function inr(n){ return "₹" + n.toLocaleString("en-IN"); }
+function $(id){ return document.getElementById(id); }
+
+function toast(msg){
+  var t = document.createElement("div");
+  t.className = "toast";
+  t.innerHTML = '<span class="dot"></span>' + msg;
+  $("toastWrap").appendChild(t);
+  setTimeout(function(){ t.style.opacity = "0"; t.style.transition = "opacity .4s"; }, 2200);
+  setTimeout(function(){ t.remove(); }, 2700);
+}
+
+// ===== CART =====
+function cartTotal(){ return cart.reduce(function(s,i){ return s + i.price*i.qty; },0); }
+function cartCount(){ return cart.reduce(function(s,i){ return s + i.qty; },0); }
+
+function renderCart(){
+  var box = $("cartItems");
+  if(cart.length === 0){
+    box.innerHTML = '<div class="cart-empty">' +
+      '<svg viewBox="0 0 24 24"><path d="M6 7h12l1 13H5L6 7Z"/><path d="M9 7a3 3 0 0 1 6 0"/></svg>' +
+      '<b>Your bag is empty</b><span>Beautiful things are waiting — start with New Arrivals.</span></div>';
+  } else {
+    box.innerHTML = cart.map(function(i){
+      return '<div class="ci">' +
+        '<img src="' + i.img + '" alt="' + i.name + '" onerror="this.style.visibility=\'hidden\'">' +
+        '<div class="ci-info">' +
+          '<span class="c">' + i.cat + '</span>' +
+          '<span class="n">' + i.name + '</span>' +
+          '<span class="p">' + inr(i.price) + '</span>' +
+          '<div class="ci-row">' +
+            '<span class="qty">' +
+              '<button onclick="chQty(\'' + i.id + '\',-1)" aria-label="Decrease">−</button>' +
+              '<b>' + i.qty + '</b>' +
+              '<button onclick="chQty(\'' + i.id + '\',1)" aria-label="Increase">+</button>' +
+            '</span>' +
+            '<button class="ci-remove" onclick="rmItem(\'' + i.id + '\')">Remove</button>' +
+          '</div>' +
+        '</div></div>';
+    }).join("");
+  }
+  var n = cartCount(), total = cartTotal();
+  $("cartSubtotal").textContent = inr(total);
+  $("cartHeadCount").textContent = "(" + n + (n===1 ? " item)" : " items)");
+  var b = $("cartCount");
+  b.textContent = n;
+  b.classList.toggle("on", n > 0);
+  // shipping progress
+  var pct = Math.min(100, Math.round(total / FREE_SHIP * 100));
+  $("shipFill").style.width = pct + "%";
+  $("shipMsg").innerHTML = total >= FREE_SHIP
+    ? "🎉 You've unlocked <b>free shipping</b>!"
+    : "Add <b>" + inr(FREE_SHIP - total) + "</b> more for free shipping";
+}
+
+function addToCart(d){
+  var found = cart.find(function(i){ return i.id === d.id; });
+  if(found){ found.qty++; } else { cart.push({id:d.id,name:d.name,price:+d.price,cat:d.cat,img:d.img,qty:1}); }
+  renderCart();
+  toast("Added to bag — " + d.name);
+  openCart();
+}
+function chQty(id,delta){
+  var it = cart.find(function(i){ return i.id === id; });
+  if(!it) return;
+  it.qty += delta;
+  if(it.qty <= 0){ cart = cart.filter(function(i){ return i.id !== id; }); }
+  renderCart();
+}
+function rmItem(id){
+  cart = cart.filter(function(i){ return i.id !== id; });
+  renderCart();
+}
+function openCart(){ $("cartDrawer").classList.add("open"); $("cartOverlay").classList.add("open"); document.body.style.overflow = "hidden"; }
+function closeCart(){ $("cartDrawer").classList.remove("open"); $("cartOverlay").classList.remove("open"); document.body.style.overflow = ""; }
+
+$("cartBtn").addEventListener("click", openCart);
+$("cartClose").addEventListener("click", closeCart);
+$("cartOverlay").addEventListener("click", closeCart);
+$("keepShopping").addEventListener("click", closeCart);
+document.addEventListener("keydown", function(e){ if(e.key === "Escape"){ closeCart(); closeSearch(); } });
+
+document.querySelectorAll(".add-btn").forEach(function(btn){
+  btn.addEventListener("click", function(){ addToCart(btn.dataset); });
+});
+
+// ===== CHECKOUT VIA WHATSAPP =====
+$("checkoutBtn").addEventListener("click", function(){
+  if(cart.length === 0){ toast("Your bag is empty"); return; }
+  var lines = cart.map(function(i){ return "• " + i.name + " × " + i.qty + " — " + inr(i.price*i.qty); });
+  var msg = "Hello Aligaah Designs! I'd like to order:%0A" + encodeURIComponent(lines.join("\n")) + "%0A" + encodeURIComponent("Total: " + inr(cartTotal()));
+  if(WHATSAPP_NUMBER.indexOf("X") !== -1){
+    toast("Add your WhatsApp number in the code to enable checkout");
+    return;
+  }
+  window.open("https://wa.me/" + WHATSAPP_NUMBER + "?text=" + msg, "_blank");
+});
+function waLink(el){
+  el.addEventListener("click", function(e){
+    if(WHATSAPP_NUMBER.indexOf("X") !== -1){ e.preventDefault(); toast("Add your WhatsApp number in the code to enable this"); }
+    else { el.href = "https://wa.me/" + WHATSAPP_NUMBER; }
+  });
+}
+waLink($("waBanner")); waLink($("waFooter"));
+
+// ===== WISHLIST =====
+document.querySelectorAll(".heart").forEach(function(h){
+  h.addEventListener("click", function(){
+    h.classList.toggle("active");
+    wishCountN += h.classList.contains("active") ? 1 : -1;
+    var b = $("wishCount");
+    b.textContent = wishCountN;
+    b.classList.toggle("on", wishCountN > 0);
+    if(h.classList.contains("active")) toast("Saved to wishlist ♥");
+  });
+});
+$("wishBtn").addEventListener("click", function(){
+  toast(wishCountN > 0 ? "You have " + wishCountN + " item" + (wishCountN>1?"s":"") + " in your wishlist" : "Tap the ♥ on any product to save it");
+});
+
+// ===== SEARCH =====
+function closeSearch(){
+  $("searchBar").classList.remove("open");
+  $("searchInput").value = "";
+  filterProducts("");
+}
+$("searchBtn").addEventListener("click", function(){
+  var sb = $("searchBar");
+  sb.classList.toggle("open");
+  if(sb.classList.contains("open")) $("searchInput").focus(); else closeSearch();
+});
+$("searchClose").addEventListener("click", closeSearch);
+$("searchInput").addEventListener("input", function(e){ filterProducts(e.target.value); });
+function filterProducts(q){
+  q = q.trim().toLowerCase();
+  document.querySelectorAll(".product").forEach(function(c){
+    var hit = c.dataset.name.toLowerCase().indexOf(q) !== -1 || c.textContent.toLowerCase().indexOf(q) !== -1;
+    c.style.display = (!q || hit) ? "" : "none";
+  });
+}
+
+// ===== MOBILE MENU =====
+$("burgerBtn").addEventListener("click", function(){ $("mobileMenu").classList.add("open"); });
+$("mobileClose").addEventListener("click", function(){ $("mobileMenu").classList.remove("open"); });
+$("mobileMenu").addEventListener("click", function(e){ if(e.target === $("mobileMenu")) $("mobileMenu").classList.remove("open"); });
+document.querySelectorAll(".mobile-panel a").forEach(function(a){
+  a.addEventListener("click", function(){ $("mobileMenu").classList.remove("open"); });
+});
+
+// ===== SCROLL REVEAL =====
+var io = new IntersectionObserver(function(entries){
+  entries.forEach(function(en){ if(en.isIntersecting){ en.target.classList.add("in"); io.unobserve(en.target); } });
+},{threshold:.12});
+document.querySelectorAll(".reveal").forEach(function(el){ io.observe(el); });
+
+// ===== CATEGORY INFINITE LOOP =====
+var catRow = $("catRow");
+if(catRow){
+  var setEl = catRow.querySelector(".cat-set");
+  var clone = setEl.cloneNode(true);
+  clone.setAttribute("aria-hidden","true");
+  catRow.appendChild(clone);
+}
+
+// ===== MISC =====
+$("year").textContent = new Date().getFullYear();
+renderCart();
+</script>
+</body>
+</html>
